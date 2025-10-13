@@ -19,29 +19,26 @@ app.get("/", async (req,res) =>{
     const game = await games.find() 
     res.render("index", {name: "Home", game})
 })
+
+app.get("/home", (req, res) =>{
+    res.redirect("/")
+})
+app.get("/home/register-game", (req,res) =>{
+    res.render("register", {name: "Register Game"})
+    console.log("test")
+})
+app.get("/home/register-game=failure", (req,res) =>{
+    res.render("registerFail", {name: "Register Game"})
+})
 app.get("/home/:id", async (req,res) =>{
   const id = req.params.id
   const game = await games.findById(id)
   console.log(game)
   res.render("description", {name: game.name, game})
 })
-app.get("/home", (req, res) =>{
-    res.redirect("/")
-})
-app.get("/home/register-game", (req,res) =>{
-    res.render("register", {name: "Register Game"})
-})
-app.get("/home/register-game=failure", (req,res) =>{
-    res.render("registerFail", {name: "Register Game"})
-})
 app.post("/home/register-game", async (req,res) =>{
   const  {link, name, description} = req.body;
-  const foundGame = await games.findById(name)
-  if(name === foundGame){
-    console.log("Not Able to Register game because the game exists ")
-    res.redirect("/home/register-game=failure")
-  }else{
-    console.log("Fikk app.post")  
+  console.log("Fikk app.post")  
   const newGame = new games({
     link: link,
     name: name,
@@ -54,8 +51,9 @@ app.post("/home/register-game", async (req,res) =>{
     res.redirect("/home")
     console.log("Yes")
   }
-  }
+  
 })
+
 
 
 

@@ -6,10 +6,9 @@
     <title><%= name %> Page</title>
     <link rel="stylesheet" href="/css/description.css">
 </head>
-<header>
-    <h1><%= game.name %></h1>
-</header>
+<%- include("./partials/header.ejs") %>
 <body>
+    <h1><%= game.name %></h1>
     <img src="<%= game.link %>" alt="<%= game.name %>">
     <div>
         <%=game.description  %>
