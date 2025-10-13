@@ -23,7 +23,7 @@ app.get("/home/:id", async (req,res) =>{
   const id = req.params.id
   const game = await games.findById(id)
   console.log(game)
-  res.render("")
+  res.render("description", {name: game.name, game})
 })
 app.get("/home", (req, res) =>{
     res.redirect("/")
