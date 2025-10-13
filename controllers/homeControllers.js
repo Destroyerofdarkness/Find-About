@@ -28,11 +28,17 @@ const home_registrer_game_post = async (req,res) =>{
   }
   
 }
-const home_game_page = async (req,res) =>{
+const home_game_page_get = async (req,res) =>{
   const id = req.params.id
-  const game = await games.findById(id)
-  console.log(game)
-  res.render("description", {name: game.name, game})
+  await games.findById(id)
+  .then((result) =>{
+    console.log(result)
+  res.render("description", {game: result})
+  })  
+  .catch((err)=>{
+    console.log(err)
+    res.render("404")
+  })
 }
 const home_game_delete =  (req,res) =>{
 const id = req.params.id;
@@ -54,7 +60,7 @@ module.exports = {
     home_get,
     home_registrer_game,
     home_registrer_game_failure,
-    home_game_page,
+    home_game_page_get,
     home_registrer_game_post,
     home_game_delete
 }

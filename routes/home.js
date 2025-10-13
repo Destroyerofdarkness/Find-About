@@ -10,7 +10,7 @@ router.get("/register-game", homeController.home_registrer_game)
 
 router.get("/register-game=failure", homeController.home_registrer_game_failure )
 
-router.get("/:id", homeController.home_game_page )
+router.get("/:id", homeController.home_game_page_get )
 
 router.post("/register-game", homeController.home_registrer_game_post)
 
