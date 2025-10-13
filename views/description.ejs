@@ -8,10 +8,17 @@
 </head>
 <%- include("./partials/header.ejs") %>
 <body>
+    <a data-game="<%= game.id %>">Delete</a>
     <h1><%= game.name %></h1>
     <img src="<%= game.link %>" alt="<%= game.name %>">
     <div>
         <%=game.description  %>
     </div>
+
+    <form action="/home/<%= game.id %>" method="post">
+        <input type="hidden" name="gameid" value="<%= game.id %>">
+        <button type="submit" >Delete</button>
+    </form>
+    <script src="/script/frontend.js"></script>
 </body>
 </html>
