@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<%- include("./partials/head.ejs")%>
+</head>
+<%- include("./partials/header.ejs")%>
+<body>
+    <div id="allData">
+<% if (game.length > 0) {%>
+<% console.log("Game Acquiered") %>
+    <% game.forEach(data => { %>
+        <a href="/home/<%= data.id %>">
+        <div class="dataBase">
+            <img src="<%= data.link %>" alt="">
+            <h2><%= data.name %></h2>
+            <h2><%= data.description %></h2>
+        </div>
+        </a>
+    <% }) %>
+    <% } %>
+    </div>
+</body>
+</html>
