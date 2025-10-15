@@ -1,5 +1,5 @@
 const games = require("../models/Games")
-//Register game
+//Register game and go to the page
 const register_game = (req,res) =>{
     res.render("register", {name: "Register Game"})
     console.log("Loaded in register page")
