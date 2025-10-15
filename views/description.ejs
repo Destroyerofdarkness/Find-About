@@ -15,7 +15,7 @@
         <%=game.description  %>
     </div>
 
-    <form action="/home/<%= game.id %>" method="post">
+    <form action="/home/game/<%= game.id %>" method="post">
         <input type="hidden" name="gameid" value="<%= game.id %>">
         <button type="submit" >Delete</button>
     </form>

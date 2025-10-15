@@ -9,6 +9,8 @@ const games = require("./models/Games.js")
 const app = express();
 const home = require("./routes/home.js")
 
+const gameRoute = require("./routes/game.js")
+
 app.set("view engine", "ejs")
 app.use(express.static(path.join(__dirname, "public")))
 app.use(express.json());
@@ -16,11 +18,11 @@ app.use(express.urlencoded({extended: true}))
 
 
 
-app.use("/home",home)
+app.use("/home", home)
 
+app.use("/home/game", gameRoute)
 
-
-app.use((req, res) =>{
+/*app.use((req, res) =>{
     res.status(404).render("404")
-})
+})*/
 app.listen(process.env.PORT)

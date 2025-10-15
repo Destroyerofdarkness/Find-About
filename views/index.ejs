@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <%- include("./partials/head.ejs")%>
+<link rel="stylesheet" href="/css/style.css">
 </head>
 <%- include("./partials/header.ejs")%>
 <body>
@@ -9,11 +10,10 @@
 <% if (game.length > 0) {%>
 <% console.log("Game Acquiered") %>
     <% game.forEach(data => { %>
-        <a href="/home/<%= data.id %>">
+        <a href="/home/game/<%= data.id %>">
         <div class="dataBase">
             <img src="<%= data.link %>" alt="">
             <h2><%= data.name %></h2>
-            <h2><%= data.description %></h2>
         </div>
         </a>
     <% }) %>
