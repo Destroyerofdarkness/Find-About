@@ -1,0 +1,21 @@
+body, html{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+.dataBase{
+ display: flex; 
+ width: 15vw; 
+ padding: 1em;
+}
+#allData a{
+    display: flex;
+    justify-content: center;
+}
+nav{
+  display: flex;
+  align-items: center;
+  gap: 1em;  
+}

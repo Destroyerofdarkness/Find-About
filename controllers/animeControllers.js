@@ -1,7 +1,7 @@
 const anime = require("../models/anime")
 
 const register_anime_page = (req,res) =>{
-    res.render("")
+    res.render("registerAni", {name: "Register Anime"})
 }
 
 const anime_make = async (req,res)=>{
@@ -25,5 +25,5 @@ const anime_make = async (req,res)=>{
 
 module.exports = {
     anime_make,
-
+    register_anime_page
 }

@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const {Schema, model} = mongoose
 
 const aniSchema = new Schema({
-    link: URL,
+    link: String,
     Name: String,
     Episodes: Number,
     Description: String,
