@@ -5,6 +5,12 @@
 </head>
 <%- include("./partials/header.ejs") %>
 <body>
-    
+    <form action="/home/anime/register" method="post">
+        <input type="url" name="link" id="link">
+        <input type="text" name="name" id="name">
+        <input type="number" name="episodes" id="episodes">
+        <input type="text" name="description" id="description">
+        <button type="submit">Register</button>
+    </form>
 </body>
 </html>
