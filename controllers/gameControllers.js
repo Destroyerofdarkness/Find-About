@@ -29,7 +29,7 @@ const game_get = async(req,res) =>{
     await games.findById(id)
   .then((result) =>{
     console.log(result)
-  res.render("description", {game: result})
+  res.render("description", {game: result, name: result.name})
   })  
   .catch((err)=>{
     console.log(err)

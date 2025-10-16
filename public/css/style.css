@@ -5,17 +5,28 @@ body, html{
     padding: 0;
     margin: 0;
 }
-.dataBase{
- display: flex; 
- width: 15vw; 
- padding: 1em;
-}
+
 #allData a{
     display: flex;
     justify-content: center;
 }
-nav{
-  display: flex;
-  align-items: center;
-  gap: 1em;  
+#allData{
+    gap: 3em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
+.dataBase{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 15vw; 
+    padding: 1em;
+}
+.dataBase img{
+    width: auto;
+    height: 6em;
+}
+.dataBase h2{
+  
