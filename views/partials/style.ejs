@@ -1,6 +1,8 @@
 <style>
-    
-  
+
+
+
+
 html, body{
 margin: 0;
 padding: 0;
@@ -8,15 +10,22 @@ padding: 0;
 nav{
   display: flex;
   align-items: center;
-  gap: 1em;  
+  gap: 1vw;  
 }
 nav a{
+    border: 0.1vw;
+    border-radius: 1vw;
     text-align: center;
     color: white;
-    font-size: 1.5vw;
+    background: var(--primaryPink);
+    font-size: 2vw;
+    font-family: var(--jomhuria);
+    text-decoration: none;
+    padding: 0.3vw;
+    margin: 0;
 }
 header{
-    background-color: #0A0A0A;
+    background-color: var(--jetBlack);
     margin: 0;
     padding-bottom: 1em;
     display: flex;
@@ -30,8 +39,29 @@ header{
 }
 header h1{
     color: white;
+    font-family: var(--jomhuria);
+    font-size: 3vw;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+}
+header div{
+    display: flex;
+    justify-content: center;
+
+    gap: 1vw;
 }
 body{
-    background-color: #C6006B;
+    background-color: var(--primaryPink);
+}
+#Logo{
+    width: auto;
+    height: 2vw;
+    align-self: center;
+}
+:root{
+    --jomhuria: "Jomhuria", serif;
+    --primaryPink: #C6006B;
+    --jetBlack: #0A0A0A;
 }
 </style>
