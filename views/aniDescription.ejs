@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("./partials/head.ejs") %>
+    <link rel="stylesheet" href="/css/description.css">
+</head>
+<%- include("./partials/header.ejs") %>
+<body>
+    <h1><%= ani.Name %></h1>
+    <img src="<%= ani.link %>" alt="<%= ani.Name %>">
+    <h1><%= ani.Episodes %></h1>
+    <div>
+        <%=ani.description  %>
+    </div>
+
+    <form action="/home/anime/<%= ani.id %>" method="post">
+        <input type="hidden" name="gameid" value="<%= ani.id %>">
+        <button type="submit" >Delete</button>
+    </form>
+    <script src="/script/frontend.js"></script>
+</body>
+</html>

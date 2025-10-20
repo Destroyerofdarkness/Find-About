@@ -12,12 +12,23 @@
     <% game.forEach(data => { %>
         <a href="/home/game/<%= data.id %>">
         <div class="dataBase">
-            <img src="<%= data.link %>" alt="">
+            <img src="<%= data.link %>" alt="<%= data.name %>">
             <h2><%= data.name %></h2>
         </div>
         </a>
     <% }) %>
     <% } %>
+
+        <%if (anime.length > 0){  %>
+            <% anime.forEach(data =>{ %>
+                <a href="/home/anime/<%= data.id %>">
+                <div class="dataBase">
+               <img src="<%= data.link %>" alt="">
+               <h2><%= data.Name %></h2>
+               </div>
+               </a>
+             <% })%>
+            <% } %>
     </div>
 </body>
 </html>
