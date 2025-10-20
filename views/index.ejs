@@ -6,7 +6,7 @@
 </head>
 <%- include("./partials/header.ejs")%>
 <body>
-    <div id="allData">
+    <main id="allData">
 <% if (game.length > 0) {%>
 <% console.log("Game Acquiered") %>
     <% game.forEach(data => { %>
@@ -29,7 +29,10 @@
                </a>
              <% })%>
             <% } %>
-    </div>
+    </main>
+    
+
+    <%- include("./partials/footer") %>
 </body>
-<%- include("./partials/footer") %>
+
 </html>

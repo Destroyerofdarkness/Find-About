@@ -1,14 +1,9 @@
-body, html{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0;
-    margin: 0;
-}
+
 
 #allData a{
     display: flex;
     justify-content: center;
+    flex: 1;
 }
 #allData{
     gap: 3em;
@@ -29,4 +24,3 @@ body, html{
     height: 6em;
 }
 
-  

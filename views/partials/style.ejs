@@ -4,8 +4,12 @@
 
 
 html, body{
+display: flex;
+flex-direction: column;
+justify-content: center;
 margin: 0;
 padding: 0;
+width: 100%;
 }
 nav{
   display: flex;
@@ -59,6 +63,23 @@ body{
     height: 2vw;
     align-self: center;
 }
+footer{
+    display: flex;
+    justify-content: center;
+    background: var(--jetBlack);
+    margin: 0;
+    padding: 1rem 0;
+    width: 100%;
+    bottom: 0;
+    position:relative;
+
+}
+
+footer p, footer h1 {
+    color: white;
+}
+
+  
 :root{
     --jomhuria: "Jomhuria", serif;
     --primaryPink: #C6006B;
