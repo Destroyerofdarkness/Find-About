@@ -10,5 +10,7 @@ router.post("/register", AniController.anime_make)
 
 router.get("/:id", AniController.anime_page)
 
+router.post("/:id", AniController.anime_page_delete)
+
 
 module.exports = router

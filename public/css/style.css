@@ -21,12 +21,12 @@ body, html{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 15vw; 
+    width: fit-content;
     padding: 1em;
 }
 .dataBase img{
     width: auto;
     height: 6em;
 }
-.dataBase h2{
+
   
