@@ -28,7 +28,7 @@ const anime_make = async (req,res)=>{
 const anime_page = async (req,res)=>{
 const id = req.params.id;
 const ani = await anime.findById(id);
-res.render("aniDescription", {ani, name: ani.name});
+res.render("aniDescription", {ani, name: ani.Name});
 }
 
 const anime_page_delete = async (req,res) =>{

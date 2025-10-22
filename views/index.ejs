@@ -1,38 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<%- include("./partials/head.ejs")%>
-<link rel="stylesheet" href="/css/style.css">
-</head>
-<%- include("./partials/header.ejs")%>
-<body>
+  <head>
+    <%- include("./partials/head.ejs")%>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <%- include("./partials/header.ejs")%>
+  <body>
     <main id="allData">
-<% if (game.length > 0) {%>
-<% console.log("Game Acquiered") %>
-    <% game.forEach(data => { %>
+      
+        <% if (game.length > 0) {%>
+            <div>
+        <h1>Game</h1>
+        <% console.log("Game Acquiered") %> <% game.forEach(data => { %>
         <a href="/home/game/<%= data.id %>">
-        <div class="dataBase">
-            <img src="<%= data.link %>" alt="<%= data.name %>">
+          <div class="dataBase">
+            <img src="<%= data.link %>" alt="<%= data.name %>" />
             <h2><%= data.name %></h2>
-        </div>
+          </div>
         </a>
-    <% }) %>
-    <% } %>
-
-        <%if (anime.length > 0){  %>
-            <% anime.forEach(data =>{ %>
-                <a href="/home/anime/<%= data.id %>">
-                <div class="dataBase">
-               <img src="<%= data.link %>" alt="">
-               <h2><%= data.Name %></h2>
-               </div>
-               </a>
-             <% })%>
-            <% } %>
+        <% }) %> 
+        </div>
+        <% } %>
+      
+      
+        <% console.log(anime) %> 
+        <%if (anime.length > 0){ %>
+            <div>
+        <h1>Anime</h1>
+        <% anime.forEach(data =>{ %>
+        <a href="/home/anime/<%= data.id %>">
+          <div class="dataBase">
+            <img src="<%= data.link %>" alt="" />
+            <h2><%= data.Name %></h2>
+          </div>
+        </a>
+        <% })%> 
+        </div>
+        <% } %>
+      
     </main>
-    
 
     <%- include("./partials/footer") %>
-</body>
-
+  </body>
 </html>
