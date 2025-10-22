@@ -66,9 +66,6 @@ footer{
     margin: 0;
     padding: 1rem 0;
     width: 100%;
-    
-
-
 }
 
 footer p, footer h1 {
@@ -87,5 +84,9 @@ footer p, footer h1 {
   }  
   header h1{
     font-size: 8vw;
+  }
+  footer{
+    position: absolute;
+    bottom: 0;
   }
 }

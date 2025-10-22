@@ -33,6 +33,7 @@ font-size: 3vw;
 }
 .dataBase img{
     width: auto;
+    align-self: center;
     height: 10vw;
 }
 
@@ -49,4 +50,22 @@ font-size: 3vw;
     --primaryPink: #C6006B;
     --jetBlack: #0A0A0A;
 }
-
+@media (max-width:720px) {
+    .dataBase h2{
+        font-size: 6vw;
+    }
+    .dataBase img{
+        height: 18vw;
+        width: fit-content;
+    }
+    #allData{
+        gap: 0;
+    }
+    #allData div h1{
+        font-size: 8vw;
+    }
+    footer{
+        bottom: 0;
+        position: absolute;
+    }
+}
