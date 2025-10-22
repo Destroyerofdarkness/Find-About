@@ -3,13 +3,11 @@
 #allData div a{
     display: flex;
     justify-content: center;
-    flex: 1; 
     text-decoration: none;
     color: white;
 }
 #allData div h1{
 text-align: center;
-align-content: center;
 padding: 1vw;
 margin: 0;
 font-family: var(--jomhuria);
@@ -20,18 +18,15 @@ font-size: 3vw;
 #allData div{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-self: center;
 }
 #allData{
-    gap: 6em;
+    align-self: center;
+    gap: 10em;
     display: flex;
     justify-content: center;
 }
 .dataBase{
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
     width: fit-content;
     padding: 1em;

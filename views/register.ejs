@@ -6,9 +6,12 @@
 <%- include("./partials/header.ejs") %>
 <body>
     <form action="/home/game/register" method="post">
-        <input type="url" name="link" id="link">
-        <input type="text" name="name" id="name">
-        <input type="text" name="description" id="description">
+        <label for="link">Image link:</label>
+        <input type="url" name="link" id="link" placeholder="Link to the image">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" placeholder="Name of the game">
+        <label for="description">Description:</label>
+        <input type="text" name="description" id="description" placeholder="Description">
         <input type="submit" value="Submit">
     </form>
 </body>
