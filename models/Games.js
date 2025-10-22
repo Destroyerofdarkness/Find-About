@@ -5,7 +5,9 @@ const {Schema, model} = mongoose
 
 const gameSchema = new Schema({
     link: String,
-    name: String,
+    name: {type: String,
+    unique: true,
+    },
     description: String
 })
 

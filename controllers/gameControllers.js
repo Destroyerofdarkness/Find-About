@@ -14,14 +14,19 @@ const registrer_game_post = async (req,res) =>{
     description: description
   })
   console.log("Game registered")
-  const result =  await newGame.save()
-  console.log("data: ", result)
-    
-  if(result){
+  await newGame.save()
+  .then((result)=>{
     res.redirect("/home")
     console.log("User got sent back to homepage")
-  }
+  })
+  .catch((err)=>{
+    res.redirect("/home/game/register/failure")
+    console.log(err)
+  })
   
+}
+const register_game_failure = (req,res) =>{
+  res.render("registerFail.ejs", {name: "Register Failure"})
 }
 // Delete and go to game page
 const game_get = async(req,res) =>{
@@ -57,4 +62,5 @@ module.exports = {
     game_delete,
     game_get,
     registrer_game_post,
+    register_game_failure,
 }
