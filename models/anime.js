@@ -1,9 +1,11 @@
 const mongoose = require("mongoose");
-
 const {Schema, model} = mongoose
 
 const aniSchema = new Schema({
-    link: String,
+    link: {
+    type: String,
+    required:[true, "Enter a link"],
+    },
     Name: {
         type: String,
         required: [true, "Put in a Name"],

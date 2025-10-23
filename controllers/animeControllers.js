@@ -1,11 +1,9 @@
 
-const { name } = require("ejs");
 const anime = require("../models/anime");
-
 
 const handleError = (err) =>{
     console.log(err.message, err.code)
-    const errors = {Name: "Valid", Description: "Valid", Episodes: "Valid"}
+    const errors = {Name: "Valid", Description: "Valid", Episodes: "Valid", link: ""}
     if(err.code === 11000){
         errors.Name = "The name is already registered"
         return errors
