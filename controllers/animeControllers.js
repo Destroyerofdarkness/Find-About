@@ -2,6 +2,21 @@
 const { name } = require("ejs");
 const anime = require("../models/anime");
 
+
+const handleError = (err) =>{
+    console.log(err.message, err.code)
+    const errors = {Name: "Valid", Description: "Valid", Episodes: "Valid"}
+    if(err.code === 11000){
+        errors.Name = "The name is already registered"
+        return errors
+    }
+
+    Object.values(err.errors).forEach(({properties}) =>{
+        errors[properties.path] = properties.message
+    })
+    return errors
+}
+
 const register_anime_page = (req,res) =>{
     res.render("registerAni", {name: "Register Anime"})
 }
@@ -21,7 +36,9 @@ const anime_make = async (req,res)=>{
         res.redirect("/home/")
     })
     .catch((err)=>{
-        console.log("Error is", err)
+    const error = handleError(err)
+    console.log(error)
+    res.redirect("/home/anime/register")
     })
 }
 
