@@ -1,4 +1,21 @@
 const games = require("../models/Games")
+
+const handleError = (err) =>{
+
+//console.log(err.message, err)
+
+const errors = {link:"Valid", description:"Valid", name: "Valid"}
+if(err.code === 11000){
+errors.name = "The Name Already Exists"
+return errors
+}
+Object.values(err.errors).forEach(({properties}) =>{
+        errors[properties.path] = properties.message
+    })
+return errors
+
+
+}
 //Register game and go to the page
 const register_game = (req,res) =>{
     res.render("register", {name: "Register Game"})
@@ -20,8 +37,9 @@ const registrer_game_post = async (req,res) =>{
     console.log("User got sent back to homepage")
   })
   .catch((err)=>{
-    res.redirect("/home/game/register/failure")
-    console.log(err)
+    const error = handleError(err)
+    console.log(error)
+    res.redirect("/home/game/register")
   })
   
 }

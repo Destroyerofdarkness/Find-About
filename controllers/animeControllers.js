@@ -3,7 +3,7 @@ const anime = require("../models/anime");
 
 const handleError = (err) =>{
     console.log(err.message, err.code)
-    const errors = {Name: "Valid", Description: "Valid", Episodes: "Valid", link: ""}
+    const errors = {Name: "Valid", Description: "Valid", Episodes: "Valid", link: "Valid"}
     if(err.code === 11000){
         errors.Name = "The name is already registered"
         return errors
@@ -12,6 +12,7 @@ const handleError = (err) =>{
     Object.values(err.errors).forEach(({properties}) =>{
         errors[properties.path] = properties.message
     })
+    
     return errors
 }
 
