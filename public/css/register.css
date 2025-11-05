@@ -8,12 +8,17 @@ form{
     flex-direction: column;
     padding: 5vw;
 }
+input, textarea, button{
+    font-family: var(--jomhuria);
+    font-size: 1.3vw;
+}
 #description{
-height: fit-content;
+height: 10vw;
 }
 form label{
 color: white;
 font-family: var(--jomhuria);
+font-size: 1.5vw;
 }
 :root{
     --jomhuria: "Jomhuria", serif;
