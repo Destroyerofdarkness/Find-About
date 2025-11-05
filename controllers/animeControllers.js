@@ -12,12 +12,11 @@ const handleError = (err) =>{
     Object.values(err.errors).forEach(({properties}) =>{
         errors[properties.path] = properties.message
     })
-    
     return errors
 }
 
 const register_anime_page = (req,res) =>{
-    res.render("registerAni", {name: "Register Anime"})
+    res.render("anime/registerAni", {name: "Register Anime"})
 }
 
 const anime_make = async (req,res)=>{
@@ -41,10 +40,15 @@ const anime_make = async (req,res)=>{
     })
 }
 
-const anime_page = async (req,res)=>{
+const anime_page = async (req,res, next)=>{
 const id = req.params.id;
-const ani = await anime.findById(id);
-res.render("aniDescription", {ani, name: ani.Name});
+try{
+    const ani = await anime.findById(id);
+res.render("anime/aniDescription", {ani, name: ani.Name});
+}
+catch(error){
+    next()
+}
 }
 
 const anime_page_delete = async (req,res) =>{

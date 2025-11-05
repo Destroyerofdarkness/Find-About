@@ -18,7 +18,7 @@ return errors
 }
 //Register game and go to the page
 const register_game = (req,res) =>{
-    res.render("register", {name: "Register Game"})
+    res.render("games/register", {name: "Register Game"})
     console.log("Loaded in register page")
 }
 
@@ -47,17 +47,18 @@ const register_game_failure = (req,res) =>{
   res.render("registerFail.ejs", {name: "Register Failure"})
 }
 // Delete and go to game page
-const game_get = async(req,res) =>{
+const game_get = async(req,res, next) =>{
     const id = req.params.id
     await games.findById(id)
   .then((result) =>{
     console.log(result)
-  res.render("description", {game: result, name: result.name})
+  res.render("games/description", {game: result, name: result.name})
   })  
   .catch((err)=>{
     console.log(err)
-    res.render("404")
+    next()
   })
+  
 }
 
 const game_delete = (req,res) =>{
@@ -74,6 +75,12 @@ games.findByIdAndDelete(id)
 })
 }
 
+const browse_games = async(req,res)=>{
+  const allGames = await games.find()
+  console.info(allGames)
+  res.render("browse", {name:"Browse Games", allGames })
+}
+
 
 module.exports = {
     register_game,
@@ -81,4 +88,5 @@ module.exports = {
     game_get,
     registrer_game_post,
     register_game_failure,
+    browse_games,
 }

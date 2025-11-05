@@ -7,11 +7,14 @@ const home_get = async (req,res) =>{
     res.render("index", {name: "Home", game , anime})
 }
 
-
+const home_redirect = (req,res) =>{
+    res.redirect("/home")
+}
 
 
 
 
 module.exports = {
     home_get,
+    home_redirect
 }
