@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("../partials/head.ejs") %>
+    <link rel="stylesheet" href="/css/register.css">
+</head>
+<%- include("../partials/header.ejs") %>
+<body>
+    <form action="/home/anime/register" method="post">
+        <label for="link">Link</label>
+        <input type="text" name="link" id="link" placeholder="Link to IMG">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" placeholder="Name of the anime">
+        <label for="episodes">Episodes</label>
+        <input type="number" name="episodes" id="episodes" placeholder="Episodes">
+        <label for="description">Description</label>
+        <textarea type="text" name="description" id="description" placeholder="Description"></textarea>
+        <input type="submit" value="Register Anime">
+    </form>
+    <%- include("../partials/footer") %>
+</body>
+</html>

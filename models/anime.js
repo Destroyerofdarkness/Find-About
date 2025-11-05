@@ -19,7 +19,6 @@ const aniSchema = new Schema({
         required: [true, "Enter some description"]
     },
 })
-
 const anime = model("animes", aniSchema)
 
 module.exports = anime
