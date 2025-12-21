@@ -2,11 +2,9 @@ const express = require("express");
 
 const path = require("path");
 
-const ejs = require("ejs");
-
 const mongoose = require("mongoose");
 
-
+const cookieParser = require("cookie-parser")
 
 require("dotenv").config();
 
@@ -20,6 +18,8 @@ const gameRoute = require("./routes/game.js");
 
 const animeRoute = require("./routes/anime.js");
 
+const authRoute = require("./routes/auth.js")
+
 app.set("view engine", "ejs");
 
 app.use(express.static(path.join(__dirname, "public")));
@@ -28,13 +28,15 @@ app.use(express.json());
 
 app.use(express.urlencoded({extended: true}));
 
-
+app.use(cookieParser())
 
 app.use("/home/anime", animeRoute);
 
 app.use("/home/game", gameRoute);
 
 app.use(home);
+
+app.use(authRoute)
 
 app.use((req, res) =>{
     res.status(404).render("404", {name: "Page Not Found"});
