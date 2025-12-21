@@ -6,17 +6,22 @@
 </head>
 <%- include("../partials/header.ejs") %>
 <body>
-    <form action="/home/anime/register" method="post">
+    <form>
         <label for="link">Link</label>
         <input type="text" name="link" id="link" placeholder="Link to IMG">
+                <div class="link error"></div>
         <label for="name">Name</label>
         <input type="text" name="name" id="name" placeholder="Name of the anime">
+        <div class="name error"></div>
         <label for="episodes">Episodes</label>
         <input type="number" name="episodes" id="episodes" placeholder="Episodes">
+        <div class="episodes error"></div>
         <label for="description">Description</label>
         <textarea type="text" name="description" id="description" placeholder="Description"></textarea>
+         <div class="description error"></div>
         <input type="submit" value="Register Anime">
     </form>
+    <script src="/script/fetch_anime.js"></script>
     <%- include("../partials/footer") %>
 </body>
 </html>

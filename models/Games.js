@@ -6,15 +6,15 @@ const {Schema, model} = mongoose
 const gameSchema = new Schema({
     link: {
     type: String,
-    required: [true, "Enter a link"]
+    required: [true, "Enter a valid link"]
     },
     name: {
     type: String,
     unique: true,
-    required: [true, "Enter a name"]
+    required: [true, "Enter a valid name"]
     },
     description: {type: String,
-    required: [true, "Enter a description"]
+    required: [true, "Enter a valid description"]
     }
 })
 

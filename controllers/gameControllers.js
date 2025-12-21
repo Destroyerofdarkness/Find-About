@@ -4,7 +4,7 @@ const handleError = (err) =>{
 
 //console.log(err.message, err)
 
-const errors = {link:"Valid", description:"Valid", name: "Valid"}
+const errors = {link:"", description:"", name: ""}
 if(err.code === 11000){
 errors.name = "The Name Already Exists"
 return errors
@@ -24,23 +24,23 @@ const register_game = (req,res) =>{
 
 const registrer_game_post = async (req,res) =>{
   const  {link, name, description} = req.body;
-  console.log("Fikk app.post")  
-  const newGame = new games({
+  console.log("Fikk app.post");
+  try{
+    const newGame = new games({
     link: link,
     name: name,
     description: description
   })
-  console.log("Game registered")
   await newGame.save()
-  .then((result)=>{
-    res.redirect("/home")
-    console.log("User got sent back to homepage")
-  })
-  .catch((err)=>{
+  console.log("Game registered")
+  }catch(err){
     const error = handleError(err)
     console.log(error)
-    res.redirect("/home/game/register")
-  })
+    res.status(301).json({error})
+  }  
+  
+  
+  
   
 }
 const register_game_failure = (req,res) =>{
@@ -81,6 +81,16 @@ const browse_games = async(req,res)=>{
   res.render("browse", {name:"Browse Games", allGames })
 }
 
+const update_content = async(req,res)=>{
+    try{
+        const id = req.params.id;
+        const {description} = req.body;
+        await games.findByIdAndUpdate({id:id},{$set:{description:description}},{new:true})
+    }catch(error){
+        console.log(error)
+    }
+}
+
 
 module.exports = {
     register_game,
@@ -89,4 +99,5 @@ module.exports = {
     registrer_game_post,
     register_game_failure,
     browse_games,
+    update_content
 }

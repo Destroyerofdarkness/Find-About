@@ -6,15 +6,19 @@
 </head>
 <%- include("../partials/header.ejs") %>
 <body>
-    <form action="/home/game/register" method="post">
+    <form>
         <label for="link">Image link:</label>
         <input type="url" name="link" id="link" placeholder="Link to the image">
+        <div class="link error"></div>
         <label for="name">Name:</label>
         <input type="text" name="name" id="name" placeholder="Name of the game">
+        <div class="name error"></div>
         <label for="description">Description:</label>
         <textarea type="text" name="description" id="description" placeholder="Description"></textarea>
+        <div class="description error"></div>
         <input type="submit" value="Register Game">
     </form>
+    <script src="/script/fetch_game.js"></script>
 </body>
 <%- include("../partials/footer") %>
 </html>

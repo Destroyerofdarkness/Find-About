@@ -14,6 +14,6 @@ router.get("/:id", gameRoute.game_get)
 
 router.post("/:id", gameRoute.game_delete)
 
-
+//router.put(":/id", gameRoute.update_content)
 
 module.exports = router

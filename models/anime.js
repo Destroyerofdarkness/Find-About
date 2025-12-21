@@ -4,19 +4,19 @@ const {Schema, model} = mongoose
 const aniSchema = new Schema({
     link: {
     type: String,
-    required:[true, "Enter a link"],
+    required:[true, "Enter a valid link"],
     },
     Name: {
         type: String,
-        required: [true, "Put in a Name"],
+        required: [true, "Enter a valid name"],
         unique: true,
     },
     Episodes: {
     type: Number,
-    required:[true, "Enter a valid number"],
+    required:[true, "Enter a valid number of episodes"],
 },
     Description: {type: String,
-        required: [true, "Enter some description"]
+        required: [true, "Enter a valid description"]
     },
 })
 const anime = model("animes", aniSchema)

@@ -12,6 +12,12 @@ input, textarea, button{
     font-family: var(--jomhuria);
     font-size: 1.3vw;
 }
+.error{
+    color: red;
+    font-family: var(--jomhuria);
+    font-size: 1.3vw;
+    font-weight: 300;
+}
 #description{
 height: 10vw;
 }
