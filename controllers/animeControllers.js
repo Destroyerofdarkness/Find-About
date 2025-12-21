@@ -1,24 +1,7 @@
 const anime = require("../models/anime");
 
-const handleError = (err) => {
-  console.log(err.message, err.code);
-  const errors = {
-    Name: "Valid",
-    Description: "Valid",
-    Episodes: "Valid",
-    link: "Valid",
-  };
-  if (err.code === 11000) {
-    errors.Name = "The name is already registered";
-    return errors;
-  }
-
-  Object.values(err.errors).forEach(({ properties }) => {
-    errors[properties.path] = properties.message;
-  });
-  return errors;
-};
-
+const {handleAnimeError} = require("../handlers/errorHandler.js")
+const handleError = handleAnimeError
 const register_anime_page = (req, res) => {
   res.render("anime/registerAni", { name: "Register Anime" });
 };
