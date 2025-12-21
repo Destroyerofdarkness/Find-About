@@ -32,6 +32,19 @@ const handleGameError = (err) => {
   return errors;
 };
 
+const handleAuthError = (err)=>{
+    const errors = {user : "", pass:""}
+    if(err.message == "User not found"){
+        errors.user = "User not found"
+        return errors;
+    }
+    if(err.message == "Wrong Password"){
+        errors.pass = "The password is not correct"
+        return errors;
+    }
+}
+
 module.exports = { handleAnimeError,
-    handleGameError
+    handleGameError,
+    handleAuthError
 }

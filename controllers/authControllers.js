@@ -1,5 +1,9 @@
 const jwt = require("jsonwebtoken")
 
+const User = require("../models/User.js")
+
+const {handleAuthError}= require("../handlers/errorHandler.js")
+
 const maxValidDate = 3*24*60*60
 
 const createJWT = (id)=>{
@@ -24,9 +28,19 @@ const render_register = (req,res)=>{
     }
 }
 
-const sign_in = (req,res)=>{
+const sign_in = async(req,res)=>{
     const {user,pass} = req.body
-    console.log("User:", user, "Pass:", pass)
+    try{
+       const userId = await User.login(user,pass)
+       console.log(userId)
+       const token = createJWT(userId)
+        res.cookie("jwt", token, {httpOnly: true, maxAge: maxValidDate * 1000 }).redirect("/home")
+    }
+    catch(err){
+        const error = handleAuthError(err)
+        console.log(error)
+        res.status(300).json({error})
+    }
 }
 
 module.exports = {
