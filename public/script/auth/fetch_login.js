@@ -22,5 +22,8 @@ document.addEventListener("DOMContentLoaded", (e)=>{
         userError.textContent = data.error.user
         passError.textContent = data.error.pass
     }
+    if(data.userId){
+        window.location.href = "/home"
+    }
     } )
 })

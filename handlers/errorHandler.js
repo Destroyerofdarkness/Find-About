@@ -42,6 +42,14 @@ const handleAuthError = (err)=>{
         errors.pass = "The password is not correct"
         return errors;
     }
+    if(err.code == 11000){
+      errors.user = "The given user already exists"
+      return errors
+    }
+    Object.values(err.errors).forEach(({properties})=>{
+      errors[properties.path] = properties.message;
+    })
+    return errors
 }
 
 module.exports = { handleAnimeError,

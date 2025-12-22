@@ -28,31 +28,26 @@ const registrer_game_post = async (req, res) => {
 // Delete and go to game page
 const game_get = async (req, res, next) => {
   const id = req.params.id;
-  await games
-    .findById(id)
-    .then((result) => {
-      console.log(result);
-      res.render("games/description", { game: result, name: result.name });
-    })
-    .catch((err) => {
-      console.log(err);
+  try{
+    const game = await games.findById(id)
+    console.log("Game:", game.name);
+      res.render("games/description", {game, name: game.name });
+  }catch{
+    console.log(err);
       next();
-    });
+  }
 };
 
-const game_delete = (req, res) => {
+const game_delete = async(req, res) => {
   const id = req.params.id;
-
   console.log(req.body, "REQ DELETE");
-  games
-    .findByIdAndDelete(id)
-    .then((result) => {
+    try{
+      await games.findByIdAndDelete(id)
       console.log("Deleted");
       res.redirect("/home");
-    })
-    .catch((err) => {
+    }catch(err){
       console.log(err);
-    });
+    }
 };
 
 const browse_games = async (req, res) => {
