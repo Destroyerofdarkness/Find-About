@@ -28,6 +28,9 @@ form.addEventListener("submit", async(e)=>{
         descError.textContent = data.error.Description
         epError.textContent = data.error.Episodes
     }
+    if(data.success){
+        window.location.href = "/"
+    }
     }catch(err){
         console.error(err)
     }

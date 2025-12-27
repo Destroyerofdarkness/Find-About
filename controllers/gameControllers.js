@@ -1,5 +1,6 @@
 const games = require("../models/Games");
-const {handleGameError} = require("../handlers/errorHandler.js")
+const {handleGameError} = require("../handlers/errorHandler.js");
+const { json } = require("express");
 const handleError = handleGameError
 
 //Register game and go to the page
@@ -16,8 +17,9 @@ const registrer_game_post = async (req, res) => {
       name: name,
       description: description,
     });
-    await newGame.save();
+    const success = await newGame.save();
     console.log("Game registered");
+    res.status(200).json({success})
   } catch (err) {
     const error = handleError(err);
     console.log(error);
@@ -51,8 +53,7 @@ const game_delete = async(req, res) => {
 };
 
 const browse_games = async (req, res) => {
-  const allGames = await games.find();
-  console.info(allGames);
+  const allGames = await games.find()
   res.render("browse", { name: "Browse Games", allGames });
 };
 

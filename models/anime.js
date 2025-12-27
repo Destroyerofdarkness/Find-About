@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const { trim } = require("validator");
 const {Schema, model} = mongoose
 
 const aniSchema = new Schema({
@@ -10,6 +11,7 @@ const aniSchema = new Schema({
         type: String,
         required: [true, "Enter a valid name"],
         unique: true,
+        trim: true
     },
     Episodes: {
     type: Number,

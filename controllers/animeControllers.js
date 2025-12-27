@@ -15,9 +15,9 @@ const anime_make = async (req, res) => {
       Episodes: episodes,
       Description: description,
     });
-    await newAnime.save();
+    const success = await newAnime.save();
     console.log("Anime registered succesfully");
-    res.redirect("/home/");
+    res.status(200).json({success})
   } catch (err) {
     const error = handleError(err);
     console.log(error);
@@ -38,7 +38,7 @@ const anime_page = async (req, res, next) => {
 const anime_page_delete = async (req, res) => {
   const id = req.params.id;
   try{
-    await anime
+    const result = await anime
     .findByIdAndDelete(id)
     console.log("DELETED", result);
       res.redirect("/home");

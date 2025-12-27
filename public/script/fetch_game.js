@@ -25,6 +25,9 @@ form.addEventListener("submit", async(e)=>{
         nameError.textContent = data.error.name
         descError.textContent = data.error.description
     }
+    if(data.success){
+        window.location.href = "/"
+    }
     }catch(err){
         console.error(err)
     }

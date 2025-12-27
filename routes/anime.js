@@ -4,13 +4,15 @@ const router = express.Router()
 
 const AniController = require("../controllers/animeControllers")
 
-router.get("/register", AniController.register_anime_page )
+const {authenticate} = require("../middleware/jwtAuth")
 
-router.post("/register", AniController.anime_make)
+router.get("/register", authenticate, AniController.register_anime_page )
 
-router.get("/:id", AniController.anime_page)
+router.post("/register",authenticate, AniController.anime_make)
 
-router.post("/:id", AniController.anime_page_delete)
+router.get("/:id",authenticate, AniController.anime_page)
+
+router.post("/:id",authenticate, AniController.anime_page_delete)
 
 
 module.exports = router
