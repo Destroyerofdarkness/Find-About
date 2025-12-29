@@ -8,9 +8,9 @@ const cookieParser = require("cookie-parser")
 
 require("dotenv").config();
 
-const games = require("./models/Games.js");
-
 const app = express();
+
+const {checkUser} = require("./middleware/jwtAuth.js")
 
 const home = require("./routes/home.js");
 
@@ -30,6 +30,8 @@ app.use(express.urlencoded({extended: true}));
 
 app.use(cookieParser())
 
+app.use(checkUser)
+
 app.use("/home/anime", animeRoute);
 
 app.use("/home/game", gameRoute);
@@ -41,7 +43,6 @@ app.use(authRoute)
 app.use((req, res) =>{
     res.status(404).render("404", {name: "Page Not Found"});
 });
-
 
 
 app.listen(process.env.PORT,"0.0.0.0", async()=>{
