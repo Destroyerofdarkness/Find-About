@@ -44,8 +44,8 @@ const game_delete = async(req, res) => {
   const id = req.params.id;
   console.log(req.body, "REQ DELETE");
     try{
-      await games.findByIdAndDelete(id)
-      console.log("Deleted");
+      const result = await games.findByIdAndDelete(id)
+      console.log("Deleted", result);
       res.redirect("/home");
     }catch(err){
       console.log(err);

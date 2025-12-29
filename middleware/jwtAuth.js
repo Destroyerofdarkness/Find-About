@@ -7,7 +7,7 @@ const authenticate = (req, res, next) => {
     jwt.verify(token, process.env.secret, (err, decodedToken) => {
       if (err) {
         console.log(err);
-        res.redirect("login");
+        res.redirect("/login");
       }else{
         console.log(decodedToken.id);
         next()

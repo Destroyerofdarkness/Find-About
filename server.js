@@ -44,7 +44,7 @@ app.use((req, res) =>{
 
 
 
-app.listen(process.env.PORT, async()=>{
+app.listen(process.env.PORT,"0.0.0.0", async()=>{
 await mongoose.connect(process.env.dbURI)
 .then((result)=>{
     console.log("Succesfully connected to database")
