@@ -15,8 +15,8 @@
         <% game.forEach(data => { %>
         <a href="/home/game/<%= data.id %>">
           <div class="dataBase">
-            <img src="<%= data.link %>" alt="<%= data.name %>" />
-            <h2><%= data.name %></h2>
+            <img src="<%= data.link %>" alt="<%= data.Name %>" />
+            <h2><%= data.Name %></h2>
           </div>
         </a>
         <% }) %> 
@@ -24,7 +24,7 @@
         <% } %>
       
       
-        <% console.log(anime) %> 
+        
         <%if (anime.length > 0){ %>
             <div>
         <h1>Anime</h1>

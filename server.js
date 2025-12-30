@@ -12,6 +12,8 @@ const app = express();
 
 const {checkUser} = require("./middleware/jwtAuth.js")
 
+const {search}= require("./middleware/search.js")
+
 const home = require("./routes/home.js");
 
 const gameRoute = require("./routes/game.js");
@@ -30,6 +32,8 @@ app.use(express.urlencoded({extended: true}));
 
 app.use(cookieParser())
 
+app.use(search)
+
 app.use(checkUser)
 
 app.use("/home/anime", animeRoute);
@@ -37,6 +41,8 @@ app.use("/home/anime", animeRoute);
 app.use("/home/game", gameRoute);
 
 app.use(home);
+
+
 
 app.use(authRoute)
 

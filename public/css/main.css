@@ -5,96 +5,46 @@ justify-content: center;
 margin: 0;
 padding: 0;
 width: 100%;
-}
-nav{
-  display: flex;
-  align-items: center;
-  gap: 1vw;  
-}
-nav a{
-    border: 0.1vw;
-    border-radius: 1vw;
-    text-align: center;
-    color: white;
-    background: var(--primaryPink);
-    font-size: 2.5vw;
-    font-weight: 400;
-    font-family: var(--jomhuria);
-    text-decoration: none;
-    padding: 0.3vw;
-    margin: 0;
+background: var(--primary);
+overflow-x: hidden;
 }
 header{
-    background-color: var(--jetBlack);
-    margin: 0;
-    padding-bottom: 1em;
-    display: flex;
-    justify-content: center;
-    width:100%;
-    height:fit-content;
-    flex-direction: column;
-    align-items: center;
-    gap: 1em;
-    
-}
-header h1{
-    display: flex;
-    flex-direction: column;
-    color: white;
-    font-family: var(--jomhuria);
-    font-size: 3vw;
-    font-weight: 400;
-    gap: 1vw;
-    margin: 0;
-    padding: 0;
-}
-header h1 span{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-}
-header div{
-    display: flex;
-    justify-content: center;
-
-    gap: 1vw;
-}
-body{
-    background-color: var(--primaryPink);
+height: max-content;
+padding: 1vw;
+background: #220029;
+display: flex;
+align-items: center;
+gap: 8vw;
+width: 100%;
+box-shadow: 0vw 0vw 0.7vw var(--shadow);
 }
 #Logo{
-    width: auto;
-    height: 30vh;
-    align-self: center;
+  display: flex;
+  width: 20vw;
+  height: auto;
 }
-footer{
-    display: flex;
-    justify-content: center;
-    background: var(--jetBlack);
-    margin: 0;
-    padding: 1rem 0;
-    width: 100%;
+nav{
+  align-self:auto;
+  display: flex;
+  align-content: flex-end;
+  gap: 2vw;
+}
+nav a{
+  color: var(--text);
+  font-family: var(--kameron);
+  font-size: 1vw;
+  text-decoration: none;
+  padding: 0.5vw;
+  border-radius: 0.4vw;
+  box-sizing: border-box;
+  box-shadow: 0vw 0vw 0.7vw var(--shadow);
 }
 
-footer p, footer h1 {
-    color: white;
-}
 
-  
 :root{
-    --jomhuria: "Jomhuria", serif;
-    --primaryPink: #C6006B;
-    --jetBlack: #0A0A0A;
-}
-@media  (max-width: 720px){
-  nav a{
-    font-size: 6vw;
-  }  
-  header h1{
-    font-size: 8vw;
-  }
-  footer{
-    position: absolute;
-    bottom: 0;
-  }
+  --primary: #220029;
+  --text: #A200FF;
+  --shadow: #7600BB;
+  --katibeh: "Katibeh", serif; font-weight: 300;
+  --kameron: "Kameron", serif;
 }

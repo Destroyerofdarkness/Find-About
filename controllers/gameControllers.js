@@ -14,8 +14,8 @@ const registrer_game_post = async (req, res) => {
   try {
     const newGame = new games({
       link: link,
-      name: name,
-      description: description,
+      Name: name,
+      Description: description,
     });
     const success = await newGame.save();
     console.log("Game registered");

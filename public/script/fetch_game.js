@@ -1,4 +1,4 @@
-const form = document.querySelector("form")
+const form = document.querySelector("#register")
 
 const linkError = document.querySelector(".link.error")
 const nameError = document.querySelector(".name.error")

@@ -8,13 +8,13 @@ const gameSchema = new Schema({
     type: String,
     required: [true, "Enter a valid link"]
     },
-    name: {
+    Name: {
     type: String,
     unique: true,
     required: [true, "Enter a valid name"],
     trim: true
     },
-    description: {type: String,
+    Description: {type: String,
     required: [true, "Enter a valid description"]
     }
 })
