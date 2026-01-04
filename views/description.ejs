@@ -1,0 +1,29 @@
+
+    <%- include("./partials/head.ejs") %>
+    <link rel="stylesheet" href="/css/description.css">
+
+<%- include("./partials/header.ejs") %>
+<body>
+    <h1><%= content.Name %></h1>
+    <img src="<%= content.link %>" alt="<%= content.Name %>">
+    <% if(content.Episodes){ %>
+    <h1> Episodes: <%= content.Episodes %></h1>
+    <% } %>
+    <div>
+        <%=content.Description  %>
+    </div>
+
+    <% if(content.Episodes){ %>
+        <form action="/home/anime/<%= content.id %>" method="post">
+        <input type="hidden" name="gameid" value="<%= content.id %>">
+        <button type="submit" >Delete</button>
+        </form>
+    <% } else{%>
+    <form action="/home/game/<%= content.id %>" method="post">
+        <input type="hidden" name="gameid" value="<%= content.id %>">
+        <button type="submit" >Delete</button>
+    </form>
+    <% } %>
+    <%- include("./partials/footer") %>
+</body>
+</html>

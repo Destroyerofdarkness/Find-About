@@ -7,6 +7,8 @@ const homeController = require("../controllers/homeControllers");
 
 router.get("/home",authenticate ,homeController.home_get );
 
+router.get("/result/:id", authenticate, homeController.find_result)
+
 router.get("/", homeController.home_redirect);
 
 

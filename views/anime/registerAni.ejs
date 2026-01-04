@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+
     <%- include("../partials/head.ejs") %>
     <link rel="stylesheet" href="/css/register.css">
-</head>
+    <script src="/script/fetch_anime.js"></script>
 <%- include("../partials/header.ejs") %>
 <body>
-    <form>
+    <form id="register">
         <label for="link">Link</label>
         <input type="text" name="link" id="link" placeholder="Link to IMG">
                 <div class="link error"></div>
@@ -21,7 +19,7 @@
          <div class="description error"></div>
         <input type="submit" value="Register Anime">
     </form>
-    <script src="/script/fetch_anime.js"></script>
+    
     <%- include("../partials/footer") %>
 </body>
 </html>

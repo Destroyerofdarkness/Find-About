@@ -25,16 +25,6 @@ const anime_make = async (req, res) => {
   }
 };
 
-const anime_page = async (req, res, next) => {
-  const id = req.params.id;
-  try {
-    const ani = await anime.findById(id);
-    res.render("anime/aniDescription", { ani, name: ani.Name });
-  } catch (error) {
-    next();
-  }
-};
-
 const anime_page_delete = async (req, res) => {
   const id = req.params.id;
   try{
@@ -51,6 +41,5 @@ const anime_page_delete = async (req, res) => {
 module.exports = {
   anime_make,
   register_anime_page,
-  anime_page,
   anime_page_delete,
 };

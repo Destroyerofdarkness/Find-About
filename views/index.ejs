@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
+
     <%- include("./partials/head.ejs")%>
     <link rel="stylesheet" href="/css/style.css" />
-  </head>
   <%- include("./partials/header.ejs")%>
   <body>
     <main id="allData">
@@ -13,7 +10,7 @@
         <h1>Game</h1>
         <% console.log("Games Acquiered") %> 
         <% game.forEach(data => { %>
-        <a href="/home/game/<%= data.id %>">
+        <a href="/result/<%= data.id %>">
           <div class="dataBase">
             <img src="<%= data.link %>" alt="<%= data.Name %>" />
             <h2><%= data.Name %></h2>
@@ -29,7 +26,7 @@
             <div>
         <h1>Anime</h1>
         <% anime.forEach(data =>{ %>
-        <a href="/home/anime/<%= data.id %>">
+        <a href="/result/<%= data.id %>">
           <div class="dataBase">
             <img src="<%= data.link %>" alt="" />
             <h2><%= data.Name %></h2>

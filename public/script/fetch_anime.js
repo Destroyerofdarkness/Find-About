@@ -1,4 +1,8 @@
-const form = document.querySelector("form")
+document.addEventListener("DOMContentLoaded", (e)=>{
+    e.preventDefault()
+
+
+const form = document.querySelector("#register")
 
 const linkError = document.querySelector(".link.error")
 const nameError = document.querySelector(".name.error")
@@ -34,4 +38,4 @@ form.addEventListener("submit", async(e)=>{
     }catch(err){
         console.error(err)
     }
-})
+})})

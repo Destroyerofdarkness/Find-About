@@ -8,9 +8,6 @@ router.get("/register",authenticate, gameRoute.register_game )
 
 router.post("/register", gameRoute.registrer_game_post)
 
-router.get("/browse",authenticate, gameRoute.browse_games)
-
-router.get("/:id",authenticate, gameRoute.game_get)
 
 router.post("/:id", gameRoute.game_delete)
 

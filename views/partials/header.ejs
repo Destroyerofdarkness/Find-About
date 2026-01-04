@@ -1,3 +1,4 @@
+</head>
 <header>
     <img id="Logo" src="/img/header_logo.png" alt="Logo">
         <form method="get" class="search">
@@ -8,12 +9,14 @@
             <% result.forEach(data => {%>
                 <% console.log("Data:",data) %>
                 <% data.forEach(result => {%>
+                    <a href="/result/<%= result.id %>">
                     <h1><%= result.Name %></h1>
+                    </a>
                <% }); %>
            <% });  %>
         </div>
 <nav>
-<a href="/home/game/register">Register Game</a>
+<a href="/home/game/register">Register  Game</a>
 <a href="/home">Home</a>
 <a href="/home/anime/register">Register Anime</a>
 <a href="/logout">Log out</a>
