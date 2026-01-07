@@ -102,11 +102,22 @@ button:hover{
  font-weight: 400;
 }
 
+footer{
+    display: flex;
+    justify-content: center;
+    font-family: var(--katibeh);
+    color: var(--text);
+    width: 100%; 
+    font-weight: 300;
+    font-size: 2vw;
+    padding: 1vw;
+    box-shadow: 0 0 0.73vw var(--shadow);
+}
 
 :root{
   --primary: #220029;
   --text: #A200FF;
   --shadow: #7600BB;
-  --katibeh: "Katibeh", serif; font-weight: 300;
+  --katibeh: "Katibeh", serif; font-weight: 200;
   --kameron: "Kameron", serif;
 }

@@ -1,10 +1,10 @@
 const handleAnimeError = (err) => {
   console.log(err.message, err.code);
   const errors = {
-    Name: "Valid",
-    Description: "Valid",
-    Episodes: "Valid",
-    link: "Valid",
+    Name: "",
+    Description: "",
+    Episodes: "",
+    link: "",
   };
   if (err.code === 11000) {
     errors.Name = "The Anime is already registered";

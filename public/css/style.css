@@ -4,15 +4,15 @@
     display: flex;
     justify-content: center;
     text-decoration: none;
-    color: white;
+    color: var(--text);
 }
 #allData div h1{
 text-align: center;
 padding: 1vw;
 margin: 0;
-font-family: var(--jomhuria);
+font-family: var(--katibeh);
 font-weight: 400;
-color: white;
+color: var(--text);
 font-size: 3vw;
 }
 #allData div{
@@ -41,14 +41,18 @@ font-size: 3vw;
     font-size: 2vw;
     padding: 0.4vw;
     margin: 0;
-    font-family: var(--jomhuria);
-    font-weight: 400;
+    font-family: var(--katibeh);
+    font-weight: 300;
     text-align: center;
+    color: var(--text);
 }
+
 :root{
-    --jomhuria: "Jomhuria", serif;
-    --primaryPink: #C6006B;
-    --jetBlack: #0A0A0A;
+  --primary: #220029;
+  --text: #A200FF;
+  --shadow: #7600BB;
+  --katibeh: "Katibeh", serif; font-weight: 300;
+  --kameron: "Kameron", serif;
 }
 @media (max-width:720px) {
     .dataBase h2{
