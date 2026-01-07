@@ -40,6 +40,67 @@ nav a{
   box-sizing: border-box;
   box-shadow: 0vw 0vw 0.7vw var(--shadow);
 }
+.searchBar{
+  display: flex;
+  overflow: visible;
+  gap: 0.3vw;
+  border-radius: 0.4vw;
+  box-shadow: 0 0 1vw var(--shadow);
+}
+.searchBar button{
+  border-radius: 0.4vw;
+  background: var(--primary);
+  border: 0;
+  width: 4vw;
+  font-size: 1vw;
+  box-sizing: border-box;
+  color: var(--text);
+}
+button:hover{
+  cursor: pointer;
+}
+.searchBar input{
+  outline: none;
+  border-radius: 0.4vw;
+  width: 15vw;
+  padding: 0.3vw;
+  font-size: 1vw;
+  background: var(--primary);
+  box-sizing: border-box;
+  color: var(--text);
+  text-decoration: none;
+  height: 2vw;
+  border: 0;
+}
+.results{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 29vw;
+  top: 5vw;
+  width: 19vw;
+  border-radius: 0.4vw;
+  background: var(--primary);
+  box-shadow: 0 0 0.7vw var(--shadow);
+}
+.results a{
+  padding: 0.6vw;
+  display: flex;
+  text-decoration: none;
+}
+.results a img{
+  width: 2vw;
+  height: auto;
+  max-width: 2vw;
+}
+.results a h1{
+ font-size: 1vw;
+ font-family: var(--kameron);
+ padding-left: 0.3vw;
+ color: var(--text);
+ letter-spacing: 0.03vw;
+ font-weight: 400;
+}
 
 
 :root{

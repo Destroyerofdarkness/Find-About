@@ -1,9 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+
 <%- include("../partials/head.ejs")  %>
 <link rel="stylesheet" href="/css/register.css">
-</head>
+<script src="/script/fetch_game.js"></script>
 <%- include("../partials/header.ejs") %>
 <body>
     <form id="register">
@@ -18,7 +16,7 @@
         <div class="description error"></div>
         <input type="submit" value="Register Game">
     </form>
-    <script src="/script/fetch_game.js"></script>
+    
 </body>
 <%- include("../partials/footer") %>
 </html>

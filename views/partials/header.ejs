@@ -1,7 +1,7 @@
 </head>
 <header>
     <img id="Logo" src="/img/header_logo.png" alt="Logo">
-        <form method="get" class="search">
+        <form class="searchBar" method="get" class="search">
             <input type="text" name="searchValue" id="searchValue" placeholder="Search by name">
             <button type="submit">Search</button>
         </form> 
@@ -10,6 +10,7 @@
                 <% console.log("Data:",data) %>
                 <% data.forEach(result => {%>
                     <a href="/result/<%= result.id %>">
+                    <img src="<%= result.link  %>" alt="<%= result.Name %>">
                     <h1><%= result.Name %></h1>
                     </a>
                <% }); %>
