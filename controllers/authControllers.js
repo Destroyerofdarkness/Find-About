@@ -14,7 +14,7 @@ const createJWT = (id)=>{
 
 const render_login = (req,res )=>{
     try{
-        res.render("auth/login")
+        res.render("auth/login",{name:"Login"})
     }catch(err){
         res.status(500).send(err)
     }
@@ -22,7 +22,7 @@ const render_login = (req,res )=>{
 
 const render_register = (req,res)=>{
     try{
-        res.render("auth/register")
+        res.render("auth/register", {name:"Register"})
     }catch{
         res.status(500).send(err)
     }

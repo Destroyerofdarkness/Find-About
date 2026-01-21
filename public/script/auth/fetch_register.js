@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", (e)=>{
     e.preventDefault()
-   const form = document.querySelector('form');
+   const form = document.querySelector('#register');
     const userError = document.querySelector(".user.error");
     const passError = document.querySelector(".pass.error");
     form.addEventListener("submit", async(e)=>{

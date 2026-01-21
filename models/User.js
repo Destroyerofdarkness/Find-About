@@ -13,12 +13,12 @@ const userSchema = new Schema({
         minLength: [6, "Password must be more than 6 letters"]
     }
 })
-userSchema.pre("save", async function(next){
+userSchema.pre("save", async function(){
     try{
         this.pass = await argon2.hash(this.pass);
-        next()
+        
     }catch(err){
-        next(err)
+        console.log(err)
     }
 })
 
@@ -27,7 +27,9 @@ userSchema.statics.login = async function(user, pass){
     if(username){
         const userPass = await argon2.verify(username.pass, pass)
         if(userPass){
+            console.log(username._id)
             return username._id
+            
         }
         throw Error("Wrong Password")
     }

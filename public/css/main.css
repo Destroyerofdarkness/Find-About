@@ -89,9 +89,9 @@ button:hover{
   text-decoration: none;
 }
 .results a img{
-  width: 2vw;
   height: auto;
-  max-width: 2vw;
+  max-width: 3vw;
+  width: fit-content;
 }
 .results a h1{
  font-size: 1vw;

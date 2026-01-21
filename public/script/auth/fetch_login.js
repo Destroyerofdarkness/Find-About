@@ -1,10 +1,11 @@
 document.addEventListener("DOMContentLoaded", (e)=>{
     e.preventDefault()
-    const form = document.querySelector("form");
+    const form = document.querySelector("#login");
     const userError = document.querySelector(".user.error");
     const passError = document.querySelector(".pass.error");
     form.addEventListener("submit",async(e)=>{
         e.preventDefault()
+        console.log("Test")
         const user = form.user.value
         const pass = form.pass.value
         userError.textContent = "";
@@ -25,5 +26,5 @@ document.addEventListener("DOMContentLoaded", (e)=>{
     if(data.userId){
         window.location.href = "/home"
     }
-    } )
+    })
 })

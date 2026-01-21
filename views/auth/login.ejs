@@ -1,7 +1,7 @@
-<%- include("./partials/head.ejs") %>
+<%- include("../partials/head.ejs") %>
 <script src="/script/auth/fetch_login.js"></script>
-<%- include("./partials/header.ejs") %>
-<form>
+<%- include("../partials/header.ejs") %>
+<form id="login">
     <label for="user">Username:</label>
     <input type="text" name="user" id="user" placeholder="Enter your username..">
     <div class="user error"></div>
@@ -10,5 +10,5 @@
     <div class="pass error"></div>
     <button type="submit">Log in</button>
 </form>
-<%- include("./partials/footer.ejs") %>
+<%- include("../partials/footer.ejs") %>
     
