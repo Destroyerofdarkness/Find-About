@@ -21,7 +21,7 @@ const handleAnimeError = (err) => {
 const handleGameError = (err) => {
   //console.log(err.message, err)
 
-  const errors = { link: "", Description: "", Name: "" };
+  const errors = { link: "", Description: "", Name: "", createdBy: "" };
   if (err.code === 11000) {
     errors.name = "The Game Already Exists";
     return errors;

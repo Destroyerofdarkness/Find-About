@@ -18,10 +18,12 @@ form.addEventListener("submit", async(e)=>{
     const name = form.name.value
     const description = form.description.value
     const episodes = form.episodes.value
+    const user = form.user.value
+    console.log("User:", user)
     try{
       const res = await fetch("/home/anime/register",{
             method: "POST",
-            body: JSON.stringify({link,name, description, episodes}),
+            body: JSON.stringify({link,name, description, episodes, user}),
             headers: {"Content-Type": "application/json"}
         })
     const data = await res.json()

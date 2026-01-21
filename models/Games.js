@@ -16,6 +16,10 @@ const gameSchema = new Schema({
     },
     Description: {type: String,
     required: [true, "Enter a valid description"]
+    },
+    createdBy: {
+        type: String,
+        required: true
     }
 })
 

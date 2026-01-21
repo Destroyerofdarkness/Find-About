@@ -15,10 +15,12 @@ form.addEventListener("submit", async(e)=>{
     const link = form.link.value
     const name = form.name.value
     const description = form.description.value
+    const user = form.user.value
+    console.log("User", user)
     try{
       const res = await fetch("/home/game/register",{
             method: "POST",
-            body: JSON.stringify({link,name, description}),
+            body: JSON.stringify({link,name, description, user}),
             headers: {"Content-Type": "application/json"}
         })
     const data = await res.json()

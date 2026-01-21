@@ -111,6 +111,7 @@ footer{
     font-weight: 300;
     font-size: 2vw;
     padding: 1vw;
+    margin-top: 2vw;
     box-shadow: 0 0 0.73vw var(--shadow);
 }
 
