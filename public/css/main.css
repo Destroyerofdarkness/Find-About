@@ -9,6 +9,7 @@ background: var(--primary);
 overflow-x: hidden;
 }
 header{
+position: sticky;
 height: max-content;
 padding: 1vw;
 background: #220029;
@@ -55,7 +56,6 @@ nav a{
   border: 0;
   width: 4vw;
   font-size: 1vw;
-  box-sizing: border-box;
   color: var(--text);
 }
 button:hover{
@@ -92,7 +92,7 @@ button:hover{
   display: flex;
   flex-direction: column;
   position: absolute;
-  left: 29vw;
+  left: 27vw;
   top: 5vw;
   width: 19vw;
   border-radius: 0.4vw;
